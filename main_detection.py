@@ -15,7 +15,7 @@ lcd = LCD()
 while(True):
     try:
         if Connection.internetReady():
-            success, response_json = Connection.getData("https://fishcounterta.000webhostapp.com/status.php")
+            success, response_json = Connection.getData("http://147.139.170.233:8080/status.php")
             
             if not success:
                 continue
@@ -55,7 +55,7 @@ while(True):
                 buzzer.turn_on_buzzer()
                 lcd.tampil(jumlah_value=jumlah_value,harga_satuan=harga_value)
 # 
-                Connection.resetData("https://fishcounterta.000webhostapp.com/status.php")
+                Connection.resetData("http://147.139.170.233:8080/transaksi.php")
 
     except KeyboardInterrupt:
         # servo.stop()
